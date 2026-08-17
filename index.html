@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <style>
+    body {
+      font-family: Verdana, sans-serif;
+      padding: 0.5vh 2vw 1vw;
+    }
+
+    .center {
+      align-content: center;
+      text-align: center;
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3JFDB6B7VV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-3JFDB6B7VV');
+  </script>
+
+  <script type="module" src="index.js" defer></script>
+  <script src="OrcaArticleComponent.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>guitar music by michael phillips</title>
+</head>
+
+<body>
+  <main>
+    <h1 class="center">Guitar Music by Michael Phillips</h1>
+    <article>
+      <p>
+        <b>Michael Phillips</b> plays guitar from around the world and around the corner.
+        He is an experienced guitarist and has been
+        playing for over 30 years. He has a deep interest in
+        music theory and composition and has a passion for creating
+        beautiful and engaging music that resonates with listeners. Michael
+        is available for hire for live performances, studio sessions, and
+        music composition. Please contact him at michael.phillips4@yahoo.com.
+      <p id="currentSong"></p>
+      <audio id="audio" controls></audio>
+      <ol id="playlist"></ol>
+      </p>
+    </article>
+
+    <section>
+      <h3 class="center">Web Apps</h3>
+      <ul>
+
+        <orca-article data-title="Meditation Interval Timer" data-url="https://www.meditationintervaltimer.co.uk/">
+          This is a simple meditation timer that allows you to set different
+          sections for your meditation. You can customize the duration of each
+          section and save your favorite meditation for later use.
+        </orca-article>
+
+        <orca-article data-title="What Birds Eat Game" data-url="https://main.d29q1pyma87412.amplifyapp.com/">
+          A game to guess what different types of birds eat.
+        </orca-article>
+
+        <orca-article data-title="Tim Vine Jokes" data-url="https://timvine.orca-tools.com">
+          A <b>react App</b> that selects random Tim Vine Jokes.
+        </orca-article>
+
+        <orca-article data-title="Poem Generator" data-url="https://tinyurl.com/ypdfnkms">
+          Creates grammatically
+          correct nonsense poems. Inspired by an article by Noam Chomsky on
+          grammar validating meaning.
+        </orca-article>
+
+        <orca-article data-title="Eliza Clone" data-url="https://tinyurl.com/mtukp5u4">
+          <p>
+            This is a simple adaptation of the original in
+            <b>React and Type script</b>.
+          </p>
+          <blockquote>
+            ELIZA is an early natural language processing computer program created
+            from 1964 to 1967 at MIT by Joseph Weizenbaum. Created to explore
+            communication between humans and machines, ELIZA simulated
+            conversation by using a pattern matching and substitution methodology
+            that gave users an illusion of understanding on the part of the
+            program, but had no representation that could be considered really
+            understanding what was being said by either party.
+          </blockquote>
+          see :
+          <a href="https://en.wikipedia.org/wiki/ELIZA">https://en.wikipedia.org/wiki/ELIZA</a>
+
+        </orca-article>
+
+        <orca-article data-title="Orca Tool Kit" data-url="https://orca1.orca-tools.com/">
+          An attempt to make a very minimalist front end tool kit.
+        </orca-article>
+
+      </ul>
+      <template id="orca-article-template">
+        <li>
+          <article>
+            <h2>
+              <small>
+                <a target="_blank" class="orca-article-header"> </a></small>
+            </h2>
+            <p class="orca-article-text">
+              <slot id="content"></slot>
+            </p>
+            click here to see app:
+            <a target="_blank" class="orca-article-url"> </a>
+
+          </article>
+        </li>
+      </template>
+
+
+
+
+
+      <footer>
+        <p style="text-align: center;">&copy; 2023 Michael Phillips</p>
+      </footer>
+      <script>
+
+
+
+      </script>
+  </main>
+</body>
+
+</html>
