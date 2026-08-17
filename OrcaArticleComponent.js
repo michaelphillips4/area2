@@ -6,10 +6,7 @@ class OrcaArticleComponent extends HTMLElement {
     header.innerText = this.dataset.title;
     header.href = this.dataset.url;
     clone.querySelector("#content").innerHTML = this.innerHTML;
-    const link = clone.querySelector("a.orca-article-url");
-    link.innerText = this.dataset.url;
-    link.href = this.dataset.url;
- 
+   
     this.innerHTML = "";
     this.appendChild(clone);
   }

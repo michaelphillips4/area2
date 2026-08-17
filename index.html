@@ -12,6 +12,9 @@
       align-content: center;
       text-align: center;
     }
+
+ h3{margin-bottom: 0;}
+.orca-article-text{margin-top: 0;}
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3JFDB6B7VV"></script>
@@ -27,29 +30,37 @@
   <script src="OrcaArticleComponent.js" defer></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>guitar music by michael phillips</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>michael phillips</title>
 </head>
 
 <body>
   <main>
-    <h1 class="center">Guitar Music by Michael Phillips</h1>
-    <article>
+    <h1 class="center">Michael Phillips</h1>
+    <p class="center">Guitarist, Software Developer and Photographer</p>
+    <div class="center" style="margin-bottom: 1.5rem;">
+      <a href="https://www.youtube.com/@MichaelPhillips4" target="_blank"
+        style="margin: 0 0.5rem; font-size: 1.5rem; color: #ff0000;">
+        <i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/michaelphillips4/" target="_blank"
+        style="margin: 0 0.5rem; font-size: 1.5rem; color: #E4405F;">
+        <i class="fab fa-instagram"></i></a>
+    </div>
+
+   
+    <section>
+      <h2>Music</h2>
       <p>
-        <b>Michael Phillips</b> plays guitar from around the world and around the corner.
-        He is an experienced guitarist and has been
-        playing for over 30 years. He has a deep interest in
-        music theory and composition and has a passion for creating
-        beautiful and engaging music that resonates with listeners. Michael
-        is available for hire for live performances, studio sessions, and
-        music composition. Please contact him at michael.phillips4@yahoo.com.
+        Michael plays music form around the world and around the corner.
+      </p>
       <p id="currentSong"></p>
       <audio id="audio" controls></audio>
       <ol id="playlist"></ol>
-      </p>
-    </article>
+
+    </section>
 
     <section>
-      <h3 class="center">Web Apps</h3>
+      <h2>Web Apps</h2>
       <ul>
 
         <orca-article data-title="Meditation Interval Timer" data-url="https://www.meditationintervaltimer.co.uk/">
@@ -63,7 +74,7 @@
         </orca-article>
 
         <orca-article data-title="Tim Vine Jokes" data-url="https://timvine.orca-tools.com">
-          A <b>react App</b> that selects random Tim Vine Jokes.
+          Random Tim Vine Jokes.
         </orca-article>
 
         <orca-article data-title="Poem Generator" data-url="https://tinyurl.com/ypdfnkms">
@@ -74,20 +85,11 @@
 
         <orca-article data-title="Eliza Clone" data-url="https://tinyurl.com/mtukp5u4">
           <p>
-            This is a simple adaptation of the original in
-            <b>React and Type script</b>.
+            This is a simple adaptation of the original ELIZA program. It is a chatbot that simulates a conversation
+            with a psychotherapist. The program uses pattern matching and substitution to respond to user input, giving
+            the illusion of understanding.
+            The original ELIZA program was created in the 1960s by Joseph Weizenbaum
           </p>
-          <blockquote>
-            ELIZA is an early natural language processing computer program created
-            from 1964 to 1967 at MIT by Joseph Weizenbaum. Created to explore
-            communication between humans and machines, ELIZA simulated
-            conversation by using a pattern matching and substitution methodology
-            that gave users an illusion of understanding on the part of the
-            program, but had no representation that could be considered really
-            understanding what was being said by either party.
-          </blockquote>
-          see :
-          <a href="https://en.wikipedia.org/wiki/ELIZA">https://en.wikipedia.org/wiki/ELIZA</a>
 
         </orca-article>
 
@@ -99,15 +101,13 @@
       <template id="orca-article-template">
         <li>
           <article>
-            <h2>
+            <h3>
               <small>
                 <a target="_blank" class="orca-article-header"> </a></small>
-            </h2>
+            </h3>
             <p class="orca-article-text">
               <slot id="content"></slot>
             </p>
-            click here to see app:
-            <a target="_blank" class="orca-article-url"> </a>
 
           </article>
         </li>
@@ -118,7 +118,7 @@
 
 
       <footer>
-        <p style="text-align: center;">&copy; 2023 Michael Phillips</p>
+        <p style="text-align: center;">&copy; 2026 Michael Phillips</p>
       </footer>
       <script>
 
