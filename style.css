@@ -1,15 +1,32 @@
+:root {
+  --primary-color: white;
+  --secondary-color: #f9f9f9;
+  --text-color: #333;
+  --highlight-color: #e8e8e8;
+  --active-color: #ddd;
+  --border-color: #666;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
 /* Global Styles */
 body {
-  font-family: Verdana, sans-serif;
+  font-family: verdana, sans-serif;
   padding: 0.5vh 2vw 1vw;
+  background-color: var(--secondary-color);
+  font-size: 0.90rem;
 }
 
 main {
   width: 100%;
   box-sizing: border-box;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  padding: 8px;
 }
 
 h1 {
+  font-family: Inter, system-ui, Helvetica, Arial, sans-serif;
   text-align: center;
   font-size: 2.85rem;
   margin-bottom: 0;
@@ -17,15 +34,17 @@ h1 {
 }
 
 h2 {
+  font-family: Inter, system-ui, Helvetica, Arial, sans-serif;
   text-align: center;
   font-size: 2rem;
   margin-bottom: 0;
 }
 
 h3 {
-   font-size: 1.5rem;
-   margin: 0;
-   padding: 0;
+  font-family: Inter, system-ui, Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 p {
@@ -38,36 +57,62 @@ p {
   text-align: center;
 }
 
-ul, ol {
+ul,
+ol {
   padding: 0;
 }
 
 li {
   list-style: none;
+  font-size: 0.90rem;
 }
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: var(--text-color);
+}
+
 
 /* Article Styles */
-.app-image {
- 
-  width: 150px;
-  object-fit: cover;
- 
+
+
+#apps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
-.article-container{
+.app-image {
+
+  width: 150px;
+  object-fit: cover;
+
+}
+
+.article-container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   gap: 1rem;
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px var(--shadow-color);
   margin-bottom: 1.5rem;
   max-width: 800px;
+  background-color: var(--secondary-color);
 
 }
-.orca-article-text {
-  margin-top: 0;
+
+h3 .orca-title {
+  margin-top: 10px;
+}
+
+.orca-article-content {
+  margin-top: 20px;
 }
 
 /* Music Player Styles */
@@ -81,15 +126,15 @@ li {
 .playlist-panel {
   padding: 1.5rem;
   border-radius: 8px;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-left: 20px;
+  box-shadow: 0 2px 4px var(--shadow-color);
   max-height: 500px;
   overflow-y: auto;
 }
 
 .playlist-panel h3 {
   margin-top: 0;
-  color: #333;
+  color: var(--text-color);
   font-size: 1.1rem;
 }
 
@@ -97,14 +142,13 @@ li {
   list-style: none;
   padding: 0;
   margin: 0;
-  padding-top: 1.5em; 
+  padding-top: 1.5em;
 }
 
 #playlist li {
 
   padding: 0.15rem;
   margin-bottom: 0.5rem;
-  background-color: white;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -112,44 +156,44 @@ li {
 }
 
 #playlist li:hover {
-  background-color: #e8e8e8;
-  border-left-color: #666;
+  background-color: var(--highlight-color);
+  border-left-color: var(--border-color);
 }
 
 #playlist li.active {
-  background-color: #ddd;
-  border-left-color: #333;
+  background-color: var(--active-color);
+  border-left-color: var(--border-color);
 }
 
 .player-panel {
   padding: 1.5rem;
   border-radius: 8px;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px var(--shadow-color);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   grid-column: 2;
+  margin-right: 20px;
 }
 
 .player-panel h3 {
   margin-top: 0;
-  color: #333;
+  color: var(--text-color);
   font-size: 1.1rem;
 }
 
 #currentSong {
   font-weight: 500;
-  color: #555;
+  color: var(--text-color);
   margin: 0.5rem 0 1rem 0;
   font-size: 0.95rem;
   text-align: center;
 }
 
 #audio {
-  width: 50%;
-  margin: 1rem auto 0;
-  display: block;
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .player-image {
@@ -171,9 +215,17 @@ li {
 }
 
 @keyframes fadeInOut {
-  0% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Video Player Styles */
@@ -198,8 +250,8 @@ li {
 }
 
 #videos iframe {
-  width: 80%;
-  max-width: 500px;
+  width: 100%;
+  max-width: 800px;
   height: 400px;
   border-radius: 8px;
   display: block;
@@ -217,9 +269,6 @@ iframe {
   text-align: center;
 }
 
-audio {
-  width: 90%;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -233,11 +282,11 @@ audio {
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .player-panel {
     grid-column: auto;
   }
-  
+
   .playlist-panel,
   .player-panel {
     padding: 1rem;
