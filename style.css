@@ -52,7 +52,7 @@ li {
   height: 125px;
   object-fit: cover;
   grid-column: 1;
-  grid-row: 1 / 4;
+  grid-row: 2;
   margin-right: 1.5rem;
   flex-shrink: 0;
 }
@@ -60,6 +60,7 @@ li {
 article {
   display: grid;
   grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
   align-items: start;
   gap: 1rem;
   margin-bottom: 2rem;
@@ -70,9 +71,11 @@ article {
 }
 
 article > h3 {
-  grid-column: 2;
+  grid-column: 1 / -1;
   grid-row: 1;
   margin-top: 0;
+  align-self: start;
+  margin-bottom: 0.5rem;
 }
 
 article > p {
@@ -309,14 +312,23 @@ audio {
   }
   
   article > h3 {
-    grid-column: 2;
+    grid-column: 1 / -1;
     grid-row: 1;
     margin-top: 0;
+    margin-bottom: 0.5rem;
     padding: 0.75rem;
     background-color: white;
     border-radius: 4px;
   }
-  
+
+  .app-image {
+    width: 150px;
+    height: 150px;
+    margin-right: 1rem;
+    grid-column: 1;
+    grid-row: 2;
+  }
+
   article > p {
     grid-column: 2;
     grid-row: 2;
