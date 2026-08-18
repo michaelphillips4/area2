@@ -2,20 +2,11 @@
 <html lang="en">
 
 <head>
-  <style>
-    body {
-      font-family: Verdana, sans-serif;
-      padding: 0.5vh 2vw 1vw;
-    }
-
-    .center {
-      align-content: center;
-      text-align: center;
-    }
-
- h3{margin-bottom: 0;}
-.orca-article-text{margin-top: 0;}
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>michael phillips</title>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3JFDB6B7VV"></script>
   <script>
@@ -28,62 +19,84 @@
 
   <script type="module" src="index.js" defer></script>
   <script src="OrcaArticleComponent.js" defer></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <title>michael phillips</title>
 </head>
 
 <body>
   <main>
     <h1 class="center">Michael Phillips</h1>
-    <p class="center">Guitarist, Software Developer and Photographer</p>
+    <p class="center">Guitarist - Software Developer - Photographer</p>
     <div class="center" style="margin-bottom: 1.5rem;">
+      <a href="#music">
+        Music</a> |
+      <a href="#apps">
+        Web Apps</a> |
+      <a href="#videos">
+        Videos</a> |
+
       <a href="https://www.youtube.com/@MichaelPhillips4" target="_blank"
-        style="margin: 0 0.5rem; font-size: 1.5rem; color: #ff0000;">
-        <i class="fab fa-youtube"></i></a>
+        style="margin: 0 0.5rem; font-size: 1rem; color: #ff0000;">
+        <i class="fab fa-youtube"></i></a> |
       <a href="https://www.instagram.com/michaelphillips4/" target="_blank"
-        style="margin: 0 0.5rem; font-size: 1.5rem; color: #E4405F;">
+        style="margin: 0 0.5rem; font-size: 1rem; color: #E4405F;">
         <i class="fab fa-instagram"></i></a>
     </div>
 
-   
-    <section>
+
+    <section id="music">
       <h2>Music</h2>
       <p>
         Michael plays music form around the world and around the corner.
+        Michael is avaliable for hire as a guitarist. Michael plays arrangments of
+        musical standards and his own ambienmt compositions.
+        He has a PA and is avaliable for gigs in the South of England.
       </p>
-      <p id="currentSong"></p>
-      <audio id="audio" controls></audio>
-      <ol id="playlist"></ol>
+
+      <div class="music-container">
+        <div class="playlist-panel">
+          <h3>Playlist</h3>
+          <ol id="playlist"></ol>
+        </div>
+
+        <div class="player-panel">
+          <h3>Now Playing</h3>
+          <p id="currentSong"></p>
+          <audio id="audio" controls></audio>
+          <img src="images/guitar2.jpeg" alt="Guitar" class="player-image center" />
+        </div>
+      </div>
 
     </section>
 
-    <section>
+    <section id="apps">
       <h2>Web Apps</h2>
       <ul>
 
-        <orca-article data-title="Meditation Interval Timer" data-url="https://www.meditationintervaltimer.co.uk/">
+        <orca-article data-title="Meditation Interval Timer" data-url="https://www.meditationintervaltimer.co.uk/"
+          data-image="images/lotus.jpg" data-image-text="A lotus flower">
           This is a simple meditation timer that allows you to set different
           sections for your meditation. You can customize the duration of each
           section and save your favorite meditation for later use.
         </orca-article>
 
-        <orca-article data-title="What Birds Eat Game" data-url="https://main.d29q1pyma87412.amplifyapp.com/">
+        <orca-article data-title="What Birds Eat Game" data-url="https://main.d29q1pyma87412.amplifyapp.com/"
+          data-image="images/birdwatcher.jpg" data-image-text="A bird watching">
           A game to guess what different types of birds eat.
         </orca-article>
 
-        <orca-article data-title="Tim Vine Jokes" data-url="https://timvine.orca-tools.com">
+        <orca-article data-title="Tim Vine Jokes" data-url="https://timvine.orca-tools.com"
+          data-image="images/jester-mouse.jpeg" data-image-text="A jester with a mouse">
           Random Tim Vine Jokes.
         </orca-article>
 
-        <orca-article data-title="Poem Generator" data-url="https://tinyurl.com/ypdfnkms">
+        <orca-article data-title="Poem Generator" data-url="https://tinyurl.com/ypdfnkms"
+          data-image="images/poem-robot-and-mouse.jpg" data-image-text="robot creating a poem for a mouse">
           Creates grammatically
           correct nonsense poems. Inspired by an article by Noam Chomsky on
           grammar validating meaning.
         </orca-article>
 
-        <orca-article data-title="Eliza Clone" data-url="https://tinyurl.com/mtukp5u4">
+        <orca-article data-title="Eliza Clone" data-url="https://tinyurl.com/mtukp5u4" data-image="images/therapist.jpg"
+          data-image-text="Therapist and robot">
           <p>
             This is a simple adaptation of the original ELIZA program. It is a chatbot that simulates a conversation
             with a psychotherapist. The program uses pattern matching and substitution to respond to user input, giving
@@ -93,7 +106,8 @@
 
         </orca-article>
 
-        <orca-article data-title="Orca Tool Kit" data-url="https://orca1.orca-tools.com/">
+        <orca-article data-title="Orca Tool Kit" data-url="https://orca1.orca-tools.com/" data-image="images/orca.jpg"
+          data-image-text="An orca whale">
           An attempt to make a very minimalist front end tool kit.
         </orca-article>
 
@@ -101,6 +115,8 @@
       <template id="orca-article-template">
         <li>
           <article>
+
+            <img class="app-image" />
             <h3>
               <small>
                 <a target="_blank" class="orca-article-header"> </a></small>
@@ -114,7 +130,20 @@
       </template>
 
 
-
+      <section id="videos">
+        <h2>Videos</h2>
+        <h3>Ambient Oddities</h3>
+        <iframe height="315" src="https://www.youtube.com/embed/ZIkwMuoPO6g?si=OKcenquUtO2aNUVZ"
+          title="YouTube video player" frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+        <h3>Classical Guitar</h3>
+        <iframe height="315"
+          src="https://www.youtube.com/embed/videoseries?si=VQqzlzSRIFqnBKnV&amp;list=PLkn8mzHvQqv1NiVoFT_DbvWNl-kxP_HOj"
+          title="YouTube video player" frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+      </section>
 
 
       <footer>
