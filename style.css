@@ -7,11 +7,14 @@ body {
 h1 {
   text-align: center;
   font-size: 2.85rem;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 h2 {
   text-align: center;
   font-size: 2rem;
+  margin-bottom: 0;
 }
 
 h3 {
@@ -103,10 +106,12 @@ article > p {
   list-style: none;
   padding: 0;
   margin: 0;
+  padding-top: 1.5em; 
 }
 
 #playlist li {
-  padding: 0.75rem;
+
+  padding: 0.15rem;
   margin-bottom: 0.5rem;
   background-color: white;
   border-radius: 4px;
@@ -147,20 +152,37 @@ article > p {
   color: #555;
   margin: 0.5rem 0 1rem 0;
   font-size: 0.95rem;
+  text-align: center;
 }
 
 #audio {
-  width: 100%;
-  margin-top: 1rem;
+  width: 50%;
+  margin: 1rem auto 0;
+  display: block;
 }
 
 .player-image {
   width: 100%;
   max-width: 300px;
   height: auto;
-  margin-top: 1.5rem;
+  margin: 1.5rem auto 0;
   border-radius: 6px;
   object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#randomBirdImage.fade-out {
+  opacity: 0;
+}
+
+#randomBirdImage.fade-in {
+  opacity: 1;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 /* Video Player Styles */
