@@ -97,13 +97,11 @@
 
         <orca-article data-title="Eliza Clone" data-url="https://tinyurl.com/mtukp5u4" data-image="images/therapist.jpg"
           data-image-text="Therapist and robot">
-          <p>
-            This is a simple adaptation of the original ELIZA created in the 1960s by Joseph Weizenbaum program.
-            It is a chatbot that simulates a conversation with a psychotherapist.
-            The program uses pattern matching and substitution to respond to user input, giving
-            the illusion of understanding.
 
-          </p>
+            An adaptation of the original ELIZA created in the 1960s by Joseph Weizenbaum program.
+            It's a chatbot that simulates a conversation with a psychotherapist.
+            The program uses pattern matching and substitution to give
+            the illusion of understanding.
 
         </orca-article>
 
@@ -116,16 +114,22 @@
       <template id="orca-article-template">
         <li>
           <article>
-            <h3>
-              <small>
-                <a target="_blank" class="orca-article-header"> </a></small>
-            </h3>
+           
+            <div class="article-container">
+                       
             <div class="app-image-container">
               <img class="app-image" />
             </div>
-            <p class="orca-article-text">
+            <div class="orca-article-text"> 
+            <h3>
+              <small>
+                <a target="_blank" class="orca-article-header"> </a></small>
+              </h3>
+              
               <slot id="content"></slot>
-            </p>
+            </div>
+          </div>
+         
           </article>
         </li>
       </template>
