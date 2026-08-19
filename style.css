@@ -158,22 +158,6 @@ a:active {
     padding: 1rem;
   }
 
-  .music-container {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .player-panel {
-    grid-column: auto;
-  }
-
-  .playlist-panel,
-  .player-panel {
-    padding: 1rem;
-  }
-
   #videos iframe {
     width: 90%;
     height: 300px;
@@ -194,11 +178,6 @@ a:active {
     max-width: 100%;
     margin: 0 auto;
     padding: 0 0.5rem;
-  }
-
-  .music-container {
-    margin-left: auto;
-    margin-right: auto;
   }
 
   #videos iframe {
