@@ -8,7 +8,7 @@ class OrcaArticleComponent extends HTMLElement {
     clone.querySelector("#content").innerHTML = this.innerHTML;
     const image = clone.querySelector(".app-image");
     image.src = this.dataset.image;
-    image.alt = this.dataset.imageText
+    image.alt = this.dataset.imageText;
     this.innerHTML = "";
     this.appendChild(clone);
   }

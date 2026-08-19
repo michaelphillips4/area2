@@ -25,7 +25,8 @@
 </head>
 
 <body>
-  <main>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content">
     <header id="home">
       <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">
         <i class="fas fa-moon" aria-hidden="true"></i>
@@ -33,7 +34,7 @@
       </button>
       <h1 class="center">Michael Phillips</h1>
       <div class="center">Guitarist - Software Developer - Photographer</div>
-      <nav>
+      <nav aria-label="Primary navigation">
         <div class="center" style="margin-bottom: 1.5rem;">
           <a href="#music">
             Music</a> |
@@ -41,10 +42,12 @@
             Web Apps</a> |
           <a href="#videos">
             Videos</a> |
-          <a href="https://www.youtube.com/@MichaelPhillips4" target="_blank"
+          <a href="https://www.youtube.com/@MichaelPhillips4" target="_blank" rel="noopener noreferrer"
+            aria-label="Michael Phillips on YouTube"
             style="margin: 0 0.5rem; font-size: 1rem; color: #ff0000;">
             <i class="fab fa-youtube"></i></a> |
-          <a href="https://www.instagram.com/michaelphillips4/" target="_blank"
+          <a href="https://www.instagram.com/michaelphillips4/" target="_blank" rel="noopener noreferrer"
+            aria-label="Michael Phillips on Instagram"
             style="margin: 0 0.5rem; font-size: 1rem; color: #E4405F;">
             <i class="fab fa-instagram"></i></a>
         </div>
@@ -53,7 +56,8 @@
 
 
 
-    <section id="music">
+    <section id="music" aria-labelledby="music-heading">
+      <h2 id="music-heading">Music</h2>
       <p>
         Michael plays music form around the world and around the corner.
         Michael is avaliable for hire as a guitarist. Michael plays arrangments of
@@ -61,23 +65,23 @@
         England.
       </p>
       <div class="music-container">
-        <div class="playlist-panel">
-          <h3>Playlist</h3>
+        <div class="playlist-panel" aria-labelledby="playlist-heading">
+          <h3 id="playlist-heading">Playlist</h3>
           <ol id="playlist"></ol>
         </div>
 
-        <div class="player-panel">
-          <h3 class="center">Now Playing</h3>
-          <p id="currentSong"></p>
-          <audio id="audio" controls></audio>
-          <img id="randomBirdImage" src="images/guitar2.jpeg" alt="Bird" class="player-image" />
+        <div class="player-panel" aria-labelledby="now-playing-heading">
+          <h3 id="now-playing-heading" class="center">Now Playing</h3>
+          <p id="currentSong" aria-live="polite"></p>
+          <audio id="audio" controls aria-label="Music player"></audio>
+          <img id="randomBirdImage" src="" alt="Guitar" class="player-image" />
         </div>
       </div>
 
     </section>
 
-    <section id="apps">
-      <h2><a href="#home">Web Apps</a></h2>
+    <section id="apps" aria-labelledby="apps-heading">
+      <h2 id="apps-heading">Web Apps</h2>
       <ul>
 
         <orca-article data-title="Meditation Interval Timer" data-url="https://www.meditationintervaltimer.co.uk/"
@@ -114,10 +118,7 @@
 
         </orca-article>
 
-        <orca-article data-title="Orca Tool Kit" data-url="https://orca1.orca-tools.com/" data-image="images/orca.jpg"
-          data-image-text="An orca whale">
-          An attempt to make a very minimalist front end tool kit.
-        </orca-article>
+      
 
       </ul>
       <template id="orca-article-template">
@@ -131,9 +132,7 @@
               </div>
               <div class="orca-article-text">
                  <h3 class="orca-article-title">
-                    <a target="_blank" class="orca-article-header"></a>
-                  <small>
-                    <a target="_blank" class="orca-article-header"> </a></small>
+                    <a target="_blank" rel="noopener noreferrer" class="orca-article-header"></a>
                 </h3>
                  <div class="orca-article-content">
                   <slot id="content"></slot>
@@ -146,8 +145,8 @@
 
     </section>
 
-    <section id="videos">
-      <h2><a href="#home">Videos</a></h2>
+    <section id="videos" aria-labelledby="videos-heading">
+      <h2 id="videos-heading">Videos</h2>
 
       <iframe height="315" src="https://www.youtube.com/embed/ZIkwMuoPO6g?si=OKcenquUtO2aNUVZ"
         title="YouTube video player" frameBorder="0"

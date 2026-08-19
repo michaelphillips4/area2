@@ -82,7 +82,6 @@ class Player {
       this.audioEl.pause();
       this.audioEl.src = src;
       this.audioEl.load();
-      this.audioEl.play().catch(() => {});
     }
 
     // Render playlist
@@ -93,9 +92,11 @@ class Player {
       a.href = "#";
       a.textContent = key;
       a.dataset.songKey = key;
+      if (key === this.currentSong) {
+        a.setAttribute("aria-current", "true");
+      }
       li.appendChild(a);
       this.playlistEl.appendChild(li);
-      console.log(key);
     });
   }
 
