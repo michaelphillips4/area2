@@ -2,6 +2,25 @@ import Player from "./player.js";
 const player = new Player();
 player.mount();
 
+const themeToggle = document.getElementById('themeToggle');
+const savedTheme = localStorage.getItem('theme');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+function setTheme(theme) {
+  const isDark = theme === 'dark';
+  document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
+  themeToggle.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+  themeToggle.querySelector('span').textContent = `${isDark ? 'Light' : 'Dark'} mode`;
+  themeToggle.querySelector('i').className = `fas fa-${isDark ? 'sun' : 'moon'}`;
+}
+
+setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+themeToggle.addEventListener('click', () => {
+  const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('theme', nextTheme);
+  setTheme(nextTheme);
+});
+
 // Random Bird Image Carousel
 async function initRandomBirdCarousel() {
   try {

@@ -1,0 +1,34 @@
+/* Web app article styles */
+#apps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.app-image {
+  width: 150px;
+  object-fit: cover;
+}
+
+.article-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+  background-color: var(--secondary-color);
+}
+
+h3 .orca-title {
+  margin-top: 10px;
+}
+
+.orca-article-content {
+  margin-top: 20px;
+}
