@@ -81,7 +81,7 @@ main {
 
 .theme-toggle {
   display: block;
-  margin: 0 0 0 auto;
+  margin: 0.25rem 0.25rem 0 auto;
   padding: 0.45rem 0.7rem;
   border: 0;
   border-radius: 999px;
@@ -132,6 +132,35 @@ p {
 .center {
   align-content: center;
   text-align: center;
+}
+
+.email-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.copy-email-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: var(--primary-color);
+  color: var(--text-color);
+  cursor: pointer;
+  font: inherit;
+}
+
+.copy-email-button:hover,
+.copy-email-button:focus-visible {
+  background: var(--highlight-color);
+}
+
+.copy-email-status {
+  font-size: 0.85rem;
 }
 
 ul,

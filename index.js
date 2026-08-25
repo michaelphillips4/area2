@@ -21,6 +21,39 @@ themeToggle.addEventListener('click', () => {
   setTheme(nextTheme);
 });
 
+const copyEmailButton = document.getElementById('copy-email');
+const emailAddress = document.getElementById('email-address');
+const copyEmailStatus = document.getElementById('copy-email-status');
+
+async function copyEmailAddress() {
+  const email = emailAddress.textContent.trim();
+
+  try {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(email);
+    } else {
+      const textArea = document.createElement('textarea');
+      textArea.value = email;
+      textArea.setAttribute('readonly', '');
+      textArea.style.position = 'fixed';
+      textArea.style.opacity = '0';
+      document.body.appendChild(textArea);
+      textArea.select();
+      const copied = document.execCommand('copy');
+      textArea.remove();
+      if (!copied) throw new Error('Copy command failed');
+    }
+
+    copyEmailStatus.textContent = 'Email copied';
+    copyEmailButton.setAttribute('aria-label', 'Email address copied');
+  } catch (error) {
+    copyEmailStatus.textContent = 'Unable to copy email';
+    console.error('Unable to copy email address:', error);
+  }
+}
+
+copyEmailButton.addEventListener('click', copyEmailAddress);
+
 // Random Bird Image Carousel
 async function initRandomBirdCarousel() {
   try {
