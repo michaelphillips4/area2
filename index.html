@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="music.css" />
-  <link rel="stylesheet" href="apps.css" />
-  <link rel="stylesheet" href="videos.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/music.css" />
+  <link rel="stylesheet" href="css/apps.css" />
+  <link rel="stylesheet" href="css/videos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <title>michael phillips</title>
   <!-- Google tag (gtag.js) -->
@@ -20,8 +20,8 @@
     gtag('config', 'G-3JFDB6B7VV');
   </script>
 
-  <script type="module" src="index.js" defer></script>
-  <script src="OrcaArticleComponent.js" defer></script>
+  <script type="module" src="js/index.js" defer></script>
+  <script src="js/OrcaArticleComponent.js" defer></script>
 </head>
 
 <body>
@@ -64,20 +64,20 @@
         musical standards and his own ambient compositions. He has a PA and is avaliable for gigs in the South of
         England. Please contact me via email at
         <span class="email-contact">
-          <b id="email-address">michael.phillips4@yahoo.co.uk</b>
-          <button id="copy-email" class="copy-email-button" type="button" aria-label="Copy email address"
+          <i id="email-address">michael.phillips4@yahoo.co.uk</i>
+          <small><button id="copy-email" class="copy-email-button" type="button" aria-label="Copy email address"
             title="Copy email address">
             <i class="fas fa-copy" aria-hidden="true"></i>
-          </button>
+          </button></small>
           <span id="copy-email-status" class="copy-email-status" role="status" aria-live="polite"></span>
         </span>
       </p>
       <div class="music-container">
-        <div class="player-panel" aria-labelledby="now-playing-heading">
-          <h3 id="now-playing-heading" class="center">Now Playing</h3>
-          <p id="currentSong" aria-live="polite"></p>
+        <div class="player-panel" >
+          <p id="currentSong" aria-live="polite"></p> 
           <audio id="audio" controls aria-label="Music player"></audio>
-          <img id="randomBirdImage" src="" alt="Guitar" class="player-image" />
+          <img id="randomBirdImage" src="" alt="" class="player-image" />
+          <p id="birdName" class="bird-name" aria-live="polite"></p>
         </div>
 
         <div class="playlist-panel" aria-labelledby="playlist-heading">

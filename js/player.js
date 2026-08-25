@@ -71,7 +71,7 @@ class Player {
     if (this.playlistEl) this.playlistEl.innerHTML = "";
   }
 
-  render() {
+  render(shouldPlay = false) {
     const keys = Object.keys(this.data);
 
     if (this.currentSongEl) this.currentSongEl.textContent = this.currentSong || "";
@@ -82,6 +82,11 @@ class Player {
       this.audioEl.pause();
       this.audioEl.src = src;
       this.audioEl.load();
+      if (shouldPlay) {
+        this.audioEl.play().catch((error) => {
+          console.error("Unable to continue audio playback:", error);
+        });
+      }
     }
 
     // Render playlist
@@ -108,7 +113,7 @@ class Player {
     const nextIndex = (currentIndex + 1 + keys.length) % keys.length;
 
     this.currentSong = keys[nextIndex];
-    this.render();
+    this.render(true);
   }
 
   handlePlaylistClick(e) {
@@ -119,8 +124,9 @@ class Player {
     if (!key) return;
 
     e.preventDefault();
+    const shouldPlay = !this.audioEl.paused;
     this.currentSong = key;
-    this.render();
+    this.render(shouldPlay);
   }
 
   destroy() {

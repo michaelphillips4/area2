@@ -64,14 +64,29 @@ async function initRandomBirdCarousel() {
     if (images.length === 0) return;
     
     const imageElement = document.getElementById('randomBirdImage');
+    const birdNameElement = document.getElementById('birdName');
     if (!imageElement) return;
     
-    const imageBaseUrl = 'https://main.d29q1pyma87412.amplifyapp.com/images/';
+    const imageBaseUrl = './birds/';
     let currentIndex = 0;
     
     function getRandomImage() {
       currentIndex = Math.floor(Math.random() * images.length);
       return images[currentIndex];
+    }
+
+    function getBirdName(filename) {
+      const name = filename.replace(/\.jpeg$/i, '').replace(/_/g, ' ');
+      return name.toLowerCase().replace(/(^|[\s-])([a-z])/g, (match, separator, letter) =>
+        separator + letter.toUpperCase()
+      );
+    }
+
+    function setImage(filename) {
+      const birdName = getBirdName(filename);
+      imageElement.src = imageBaseUrl + filename;
+      imageElement.alt = birdName;
+      if (birdNameElement) birdNameElement.textContent = birdName;
     }
     
     function changeImage() {
@@ -83,7 +98,7 @@ async function initRandomBirdCarousel() {
       
       setTimeout(() => {
         // Change the image
-        imageElement.src = imageBaseUrl + nextImage;
+        setImage(nextImage);
         
         // Fade in
         imageElement.classList.remove('fade-out');
@@ -92,7 +107,7 @@ async function initRandomBirdCarousel() {
     }
     
     // Set initial random image
-    imageElement.src = imageBaseUrl + getRandomImage();
+    setImage(getRandomImage());
     imageElement.classList.add('fade-in');
     
     // Change image every 6 seconds

@@ -97,6 +97,11 @@
   transition: opacity 0.5s ease-in-out;
 }
 
+.bird-name {
+  margin: 0.5rem auto 0;
+  text-align: center;
+}
+
 #randomBirdImage.fade-out {
   opacity: 0;
 }
