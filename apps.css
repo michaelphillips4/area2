@@ -9,7 +9,11 @@
 
 .app-image {
   width: 150px;
+  max-width: 300px;
+  height: auto;
+  border-radius: 6px;
   object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .article-container {

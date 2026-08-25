@@ -13,6 +13,7 @@
   box-shadow: 0 2px 4px var(--shadow-color);
   max-height: 500px;
   overflow-y: auto;
+  grid-column: 2;
 }
 
 .playlist-panel h3 {
@@ -62,7 +63,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  grid-column: 2;
+  grid-column: 1;
   margin-right: 20px;
 }
 
@@ -120,7 +121,7 @@
 
 @media (max-width: 768px) {
   .music-container {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .playlist-panel,
@@ -133,12 +134,15 @@
     padding: 1rem;
   }
 
+  .playlist-panel,
   .player-panel {
     grid-column: auto;
   }
 
   #audio {
+    display: block;
     width: 100%;
+    max-width: none;
   }
 
   #playlist {
